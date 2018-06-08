@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+/* start my freamwork */
+.text-center{
+    text-align: center;
+
+}
+.container{
+    margin: auto ; 
+    
+}
+.clearfix{
+    clear :both;
+}
+
+/* visible in normal way must be hidden but in the size 
+which you wanted you change it to block */
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,{
+display:none;
+}
+
+
+.float-left{
+    float: left;
+    /* for arabic */
+    direction:rtl ;
+        display:inline-block; 
+
+}
+
+.float-right{
+    float: right;
+    direction:rtl ;
+    display:inline-block; 
+}
+
+
+.h1{
+    font-size:2em;
+}
+.padding-eng{
+    padding: 0 20px 0 0 ;
+}
+
+.padding-ara{
+    padding: 0 0 20px  0 ;
+}
+
+.responsive-pargraph{
+    line-height:1.8em
+}
+.responsive-image{
+    width:100%;
+}
+
+
+.list-unstiled{
+    margin: 0 ;
+     padding : 0;
+     list-style: none;
+}
+.block{
+    display:block;
+}
+
+
+.text-me{
+    margin : 0 0 20px;
+    font-weight : bold;
+    color : #777;
+    letter-spacing : -1px;
+}
+
+
+.padding-normal{
+    padding:30px;
+}
+
+.special-color{
+    color:red;
+}
+
+.margine-top{
+    margin-top:25px;
+}
+
+    /*end the freamwork  */

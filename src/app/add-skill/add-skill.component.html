@@ -1,0 +1,47 @@
+
+
+  <!-- the container -->
+<div class="uk-container uk-padding">
+  <!-- the card -->
+<div class="uk-card uk-card-default uk-card-body ">
+    <h3 class="uk-card-title">أضف مهارتك</h3>
+
+ <!-- the form -->
+<form>
+    <fieldset class="uk-fieldset">
+
+           <!-- name  ====== [(ngModel)] -->
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="الاسم" name="name" [(ngModel)]="name">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="رقم الهاتف" name="phone" [(ngModel)]="phone"> 
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="المهارة" name="skill" [(ngModel)]="skill">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="المنطقة" name="place" [(ngModel)]="place">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="السعر" name="price" [(ngModel)]="price">
+        </div>
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="ملاحظات" name="notes" [(ngModel)]="notes"></textarea>
+        </div>
+
+    
+        <div class="uk-margin">
+    <button class="uk-button uk-button-primary" (click)="insertSkill()"  >أضف</button>
+        </div>
+
+    </fieldset>
+
+    <!-- end the form -->
+</form>
+<!-- end the card -->
+</div>
+
+<!-- end the container -->
+</div>

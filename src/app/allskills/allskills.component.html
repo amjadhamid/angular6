@@ -1,0 +1,116 @@
+
+  <!-- the container -->
+<div class="uk-container ">
+<div class=" uk-padding" >
+
+<table class="uk-table uk-table-striped text-center">
+    <thead>
+        <tr>
+            <th>$key</th>
+            <th>name </th>
+            <th>phone</th>
+            <th>skill </th>
+            <th>place </th>
+            <th>price </th>
+            <th>action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of itemArray" class="text-center">
+            <td>{{item.$key}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.skill}}</td>
+            <td>{{item.place}}</td>
+            <td>{{item.price}}</td>
+           
+           
+           <!-- This is a button toggling the modal -->
+            <td> 
+             <button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #modal-example"
+            (click)="editForm(item.$key)">
+             Edit</button>
+            </td>
+
+            <td> 
+               <button class="uk-button uk-button-danger uk-button-small"
+                        (click)="onDelete(item.$key)">
+                        Delete
+               </button>
+           </td>  
+
+
+<!-- This is the modal of Edit -->
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+
+          <!-- start the content -->
+              <!-- the form -->
+<form>
+    <fieldset class="uk-fieldset">
+
+           <!--you need in edit the {name} and the last {value} of the data  name  -->
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="الاسم" name="name" [(ngModel)]="name"  >
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="رقم الهاتف" name="phone" [(ngModel)]="phone"> 
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="المهارة" name="skill" [(ngModel)]="skill">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="المنطقة" name="place" [(ngModel)]="place">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="السعر" name="price" [(ngModel)]="price">
+        </div>
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="ملاحظات" name="notes" [(ngModel)]="notes">
+            </textarea>
+        </div>
+
+    
+    </fieldset>
+
+    <!-- end the form -->
+</form>
+
+
+          <!-- end the heading -->
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary"
+                    type="button"
+                   (click)="onEdit(item.$key )">
+                   Save
+                   </button>
+        </p>
+    </div>
+</div>
+
+
+
+
+
+      </tr>
+    </tbody>
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- This is a button toggling the modal -->
+<!-- <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Open</button> -->
+

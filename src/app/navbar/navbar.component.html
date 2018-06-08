@@ -1,0 +1,43 @@
+<nav class="uk-navbar-container" uk-navbar>
+
+
+    <div class="uk-navbar-right">
+     <!-- uk-active  for active link-->
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">حرفة</a></li>
+            <li *ngIf="!isLoggIn"><a href="/register">التسجيل</a></li>
+            <li *ngIf="!isLoggIn"><a href="/login">الدخول</a></li>
+            <li><a href="/allskill">المهارات</a></li>
+            <li class=""><a href="/myskill">حرفتي</a></li>
+
+            <!-- <li>
+           
+                <a href="#">مهاراتي</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="/myskill">حرفتي</a></li>
+                    
+                     
+                     </ul>
+                </div>
+            </li> -->
+        </ul>
+
+    </div>
+ <div class="uk-navbar-left">
+
+           <ul class="uk-navbar-nav">
+            <li *ngIf="isLoggIn">
+                <a href="#">حسابك الشخصي</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="addskill">أضف</a></li>
+                        <li class="uk-nav-header" (click)="logout()">خروج</li>
+                        <!-- <li class="uk-nav-divider"></li>
+                        <li><a href="#">خروج</a></li> -->
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

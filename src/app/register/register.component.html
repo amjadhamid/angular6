@@ -1,0 +1,41 @@
+
+
+  <!-- the container -->
+<div class="uk-container uk-padding">
+  <!-- the card -->
+<div class="uk-card uk-card-default uk-card-body ">
+  
+  
+     <h3 class="uk-card-title" >
+    التسجيل</h3>
+
+ <!-- the form -->
+<form>
+    <fieldset class="uk-fieldset">
+
+           <!-- name  ====== [(ngModel)] -->
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="الاسم" name="name" [(ngModel)]="name">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="البريد الالكتروني" name="email" [(ngModel)]="email"> 
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="password" placeholder="كلمة السر" name="password" [(ngModel)]="password">
+        </div>
+        
+    
+
+        <div class="uk-margin">
+    <button class="uk-button uk-button-primary" (click)="onRegister()">التسجيل</button>
+        </div>
+
+    </fieldset>
+
+    <!-- end the form -->
+</form>
+<!-- end the card -->
+</div>
+
+<!-- end the container -->
+</div>
