@@ -4,41 +4,46 @@
 <div class=" uk-padding" >
 
 <table class="uk-table uk-table-striped text-center">
-    <thead>
+     <thead>
         <tr>
+          <div>
             <th>$key</th>
             <th>name </th>
-            <th>phone</th>
+            <!-- <th>phone</th> -->
             <th>skill </th>
             <th>place </th>
-            <th>price </th>
+            <!-- <th>price </th> -->
             <th>action</th>
-
+          </div>
         </tr>
     </thead>
+
     <tbody>
+
         <tr *ngFor="let item of itemArray" class="text-center">
+         <div ngaIf="uid === myUid">
+
             <td>{{item.$key}}</td>
             <td>{{item.name}}</td>
-            <td>{{item.phone}}</td>
+            <!-- <td>{{item.phone}}</td> -->
             <td>{{item.skill}}</td>
             <td>{{item.place}}</td>
-            <td>{{item.price}}</td>
+            <!-- <td>{{item.price}}</td> -->
            
            
            <!-- This is a button toggling the modal -->
             <td> 
-             <button class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #modal-example"
-            (click)="editForm(item.$key)">
-             Edit</button>
+             <button class="uk-button uk-button-primary uk-button-small" type="button" 
+            (click)="moreInfo(item.$key)">
+             Detailes</button>
             </td>
-
+<!-- 
             <td> 
                <button class="uk-button uk-button-danger uk-button-small"
                         (click)="onDelete(item.$key)">
                         Delete
                </button>
-           </td>  
+           </td>   -->
 
 
 <!-- This is the modal of Edit -->
@@ -92,12 +97,15 @@
     </div>
 </div>
 
-
-
-
+     <!-- end the if condation -->
+      </div>
 
       </tr>
+
+     
     </tbody>
+
+
 </table>
 
 </div>

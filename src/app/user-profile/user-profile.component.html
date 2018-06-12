@@ -1,0 +1,110 @@
+
+
+<div class="uk-padding">
+
+<div class="uk-card uk-card-default uk-width-1-2@m">
+    <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <img class="uk-border-circle" width="90" height="90" src="assets/img/back.jpg">
+            </div>
+            <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">Email : {{email}}</h3>
+                <p class="uk-text-meta uk-margin-remove-top">{{name}}</p>
+            </div>
+        </div>
+    </div>
+   <!-- the body -->
+    <div class="uk-card-body">
+      <!--  the grid -->
+    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+        <p> Notes :{{notes}}</p><hr>
+        <p  class=" ">Phone :{{phone}} </p><hr>
+        <p  class="">Place :{{place}} </p><hr>
+        <p  class=" ">Price :{{price}} </p><hr>
+        <p  class=" ">Skill :{{skill}} </p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+           
+            <div class="uk-card-media-top">
+                <img src="assets/img/back.jpg" alt="">
+             <button class="uk-button  uk-button-secondary" type="button">Upload Picture</button>
+
+        
+        
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="uk-card-footer">
+        <a href="#" class="uk-button uk-button-text"  uk-toggle="target: #modal-example">Edit
+           <!-- end the a -->
+        </a>
+     
+<!-- This is the modal of Edit -->
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+
+          <!-- start the content -->
+              <!-- the form -->
+<form>
+    <fieldset class="uk-fieldset">
+
+           <!--you need in edit the {name} and the last {value} of the data  name  -->
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="الاسم" name="name" [(ngModel)]="name"  >
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="رقم الهاتف" name="phone" [(ngModel)]="phone"> 
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="المهارة" name="skill" [(ngModel)]="skill">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="المنطقة" name="place" [(ngModel)]="place">
+        </div>
+          <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="السعر" name="price" [(ngModel)]="price">
+        </div>
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="ملاحظات" name="notes" [(ngModel)]="notes">
+            </textarea>
+        </div>
+
+    
+    </fieldset>
+
+    <!-- end the form -->
+</form>
+
+
+          <!-- end the heading -->
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary"
+                    type="button"
+                   (click)="onEdit()">  
+                   Save
+                   </button>  
+        </p>
+    </div>
+</div>
+
+
+
+        
+
+
+
+
+        <!-- end the card -->
+    </div>
+</div>
+
+</div>

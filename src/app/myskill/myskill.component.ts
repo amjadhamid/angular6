@@ -26,10 +26,15 @@ export class MyskillComponent implements OnInit {
   
   itemArray= []
 
-
+// for validate 
+myUid:any
 
   constructor(public db:AngularFireDatabase  , public router:Router) {
-   //
+   // Here we get the uid from local storage and put it in a variable
+ this.myUid =  localStorage.getItem('uid');
+
+
+//
     this.itemList = db.list('skills');
    this.itemList.snapshotChanges()
    .subscribe(actions=>{

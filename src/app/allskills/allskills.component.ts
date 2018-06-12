@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {   AngularFireDatabase , AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router , ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-allskills',
@@ -25,7 +25,7 @@ export class AllskillsComponent implements OnInit {
   
   itemArray= []
 
-  constructor(public db:AngularFireDatabase  , public router:Router) {
+  constructor(public db:AngularFireDatabase  , public router:Router  , public Actroute:ActivatedRoute) {
     this.itemList = db.list('skills');
    this.itemList.snapshotChanges()
    .subscribe(actions=>{
@@ -42,6 +42,9 @@ export class AllskillsComponent implements OnInit {
    })
        console.log(this.itemList)
 
+// for activateed route 
+this.Actroute.params.subscribe(params => console.log(params))
+
 
 
   }
@@ -50,66 +53,70 @@ export class AllskillsComponent implements OnInit {
   ngOnInit() {
   }
 
-editForm($key){
-for (let value of this.itemArray) {
-  if (value['$key'] == $key) {
+// editForm($key){
+// for (let value of this.itemArray) {
+//   if (value['$key'] == $key) {
    
 
-   this.name = value['name'];
-   this.phone = value['phone'];
-   this.skill= value['skill'];
-   this.place= value['place'];
-   this.price= value['price'] ;
-   this.notes= value['notes']   ;
+//    this.name = value['name'];
+//    this.phone = value['phone'];
+//    this.skill= value['skill'];
+//    this.place= value['place'];
+//    this.price= value['price'] ;
+//    this.notes= value['notes']   ;
     
-  }
+//   }
 
+// }
+
+// }
+
+// // 
+// onEdit($key){
+
+// //  this value came from editForm()
+//    this.name 
+//    this.phone 
+//    this.skill
+//    this.place
+//    this.price
+//    this.notes
+//  // set(first parameter to detect the spsific value , second the changes)
+//  this.itemList.set( $key ,{
+//  name : this.name ,
+//  phone : this.phone ,
+//  skill :  this.skill ,
+//  place : this.place ,
+//  notes : this.notes ,
+//  price : this.price 
+// })
+// // اول شيء تاتي القيم من الفورم ثم تعدل ثم يعاد تفريغ المصفوفة
+// this.itemArray = []
+// this.router.navigate(['/myskill'])
+
+
+//   //  console.log($key  + "  name : " + this.name)
+
+
+
+
+
+// }
+
+
+// onDelete($key){
+
+//  this.itemList.remove($key);
+//  this.itemArray = []
+
+// }
+
+moreInfo($key){
+  console.log($key)
+    // this.router.navigate(['detailes'])
+
+  this.router.navigate(['detailes/'+$key])
 }
-
-}
-
-// 
-onEdit($key){
-
-//  this value came from editForm()
-   this.name 
-   this.phone 
-   this.skill
-   this.place
-   this.price
-   this.notes
- // set(first parameter to detect the spsific value , second the changes)
- this.itemList.set( $key ,{
- name : this.name ,
- phone : this.phone ,
- skill :  this.skill ,
- place : this.place ,
- notes : this.notes ,
- price : this.price 
-})
-// اول شيء تاتي القيم من الفورم ثم تعدل ثم يعاد تفريغ المصفوفة
-this.itemArray = []
-this.router.navigate(['/myskill'])
-
-
-  //  console.log($key  + "  name : " + this.name)
-
-
-
-
-
-}
-
-
-onDelete($key){
-
- this.itemList.remove($key);
- this.itemArray = []
-
-}
-
-
-
 
 // end the main class
 }

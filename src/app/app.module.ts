@@ -24,6 +24,8 @@ import { RegisterComponent } from './register/register.component';
 import { MyskillComponent } from './myskill/myskill.component';
 import { AllskillsComponent } from './allskills/allskills.component';
 import { AllskillsnpmComponent } from './allskillsnpm/allskillsnpm.component';
+import { DetailesComponent } from './detailes/detailes.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -38,6 +40,8 @@ const routes:Routes = [
   { path:'register' , component : RegisterComponent },
   { path:'myskill' , component : MyskillComponent },
   { path:'allskill' , component : AllskillsComponent },
+  { path: 'detailes/:id', component: DetailesComponent },
+  { path: 'userprofile', component: UserProfileComponent },
 
 ]
 
@@ -55,7 +59,9 @@ const routes:Routes = [
     RegisterComponent,
     MyskillComponent,
     AllskillsComponent,
-    AllskillsnpmComponent
+    AllskillsnpmComponent,
+    DetailesComponent,
+    UserProfileComponent
   ],
   //  every thing in importnt area you must import it here
   imports: [
