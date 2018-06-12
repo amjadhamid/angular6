@@ -29,6 +29,7 @@ import { AllskillsComponent } from './allskills/allskills.component';
 import { AllskillsnpmComponent } from './allskillsnpm/allskillsnpm.component';
 import { DetailesComponent } from './detailes/detailes.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DropZoneDirective } from './drop-zone.directive';
 
 
 
@@ -64,7 +65,8 @@ const routes:Routes = [
     AllskillsComponent,
     AllskillsnpmComponent,
     DetailesComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DropZoneDirective
   ],
   //  every thing in importnt area you must import it here
   imports: [

@@ -26,6 +26,7 @@ password:string = ' ' ;
 
   itemList: AngularFireList<any>;
 
+itemArray=[];
 
   constructor(private afAuth:AngularFireAuth , public db:AngularFireDatabase   , public router:Router) {
       this.itemList = db.list('users');

@@ -31,11 +31,12 @@
         <div class="uk-card uk-card-default uk-card-body">
            
             <div class="uk-card-media-top">
-                <img src="{{image}}" alt="">
+                <img src="{{downloadURL}}" alt="">
              <input type="file" (change)="upload($event)" accept=".jpg ,.png" >Upload Picture
+              <!-- <div>{{ uploadPercent | async }}</div>
+                 <a [href]="downloadURL | async">{{ downloadURL | async }}</a> -->
+                                 <img src="{{downloadURL | async }}" alt="">
 
-        
-        
         </div>
     </div>
 </div>
