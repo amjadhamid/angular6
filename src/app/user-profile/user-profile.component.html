@@ -2,7 +2,7 @@
 
 <div class="uk-padding">
 
-<div class="uk-card uk-card-default uk-width-1-2@m">
+<div class="uk-card uk-card-default ">
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
             <div class="uk-width-auto">
@@ -31,8 +31,8 @@
         <div class="uk-card uk-card-default uk-card-body">
            
             <div class="uk-card-media-top">
-                <img src="assets/img/back.jpg" alt="">
-             <button class="uk-button  uk-button-secondary" type="button">Upload Picture</button>
+                <img src="{{image}}" alt="">
+             <input type="file" (change)="upload($event)" accept=".jpg ,.png" >Upload Picture
 
         
         

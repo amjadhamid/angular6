@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {   AngularFireDatabase , AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+// just fire storage
+import { AngularFireStorage ,AngularFireStorageReference ,AngularFireUploadTask } from 'angularfire2/storage';  // 
 
 @Component({
   selector: 'app-user-profile',
@@ -27,6 +29,9 @@ myUid:string ;
   price:string;
   notes:string ;
   email:string;
+  image:string;
+  
+
 //for add
   itemList: AngularFireList<any>;
   
@@ -34,7 +39,15 @@ myUid:string ;
 
   userkey:string ;
 
-  constructor(public db:AngularFireDatabase , public router:Router) { 
+  ref:AngularFireStorageReference;
+
+  task :AngularFireUploadTask;
+
+  downloadURL:Observable<string>;
+
+ imageUrl:string;
+ 
+  constructor(private afstorage:AngularFireStorage ,  public db:AngularFireDatabase , public router:Router) { 
     
     this.email = localStorage.getItem('email')
     this.myUid = localStorage.getItem('uid')
@@ -63,13 +76,20 @@ myUid:string ;
               this.price = this.itemArray[0]['price']
               this.notes = this.itemArray[0]['notes']
               this.email = this.itemArray[0]['email']
- 
+               this.image = this.itemArray[0]['image']
+
         console.log(this.userkey)
      
  
      });
    })
        console.log(this.itemList)
+
+
+
+
+
+
 
 
   }
@@ -80,7 +100,34 @@ myUid:string ;
 
   }
 
+upload(event){
+  const id = Math.random().toString(36).substring(2); // to chenge the id to a random name
+  this.ref = this.afstorage.ref(id); // dtetect the place of picture on firebase
+  this.task = this.ref.put(event.target.files[0]) // upload the picture
+  this.downloadURL  = this.task.downloadURL 
+  this.downloadURL.subscribe(url=>{
 
+     if(url){
+  this.imageUrl  = url 
+  console.log(url)
+
+     }
+  console.log(this.imageUrl  )
+ this.itemList.set( this.userkey ,{
+ name : this.name ,
+ phone : this.phone ,
+ skill :  this.skill ,
+ place : this.place ,
+ notes : this.notes ,
+ price : this.price, 
+ email : this.email,
+ uid : this.myUid ,
+  image: this.imageUrl
+})
+// end the function
+   })
+   
+   }
 
 // 
 onEdit(){

@@ -9,8 +9,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+// storage
+import { AngularFireStorageModule } from 'angularfire2/storage';  // 
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
 
 // the component
 import { AppComponent } from './app.component';
